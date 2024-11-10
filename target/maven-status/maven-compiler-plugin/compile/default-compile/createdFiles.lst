@@ -4,6 +4,7 @@ org\example\User.class
 org\example\UserCredentials.class
 org\example\UserPasswordReset.class
 org\example\Order.class
+org\example\OrderMethods.class
 org\example\UserGenerator.class
 org\example\Endpoints.class
 org\example\UserMethods.class

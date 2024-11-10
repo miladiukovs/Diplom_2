@@ -1,11 +1,13 @@
 package org.example;
 
+import io.qameta.allure.Step;
 import io.restassured.response.ValidatableResponse;
 
 import static io.restassured.RestAssured.given;
 
 public class OrderMethods extends RestClient implements Endpoints {
 
+    @Step("создание заказа")
     public ValidatableResponse createOrder(Order order, String accessToken) {
         return given()
                 .spec(getBaseSpec())
@@ -15,6 +17,7 @@ public class OrderMethods extends RestClient implements Endpoints {
                 .then();
     }
 
+    @Step("получение данных ингредиентов")
     public ValidatableResponse getIngredients() {
         return given()
                 .spec(getBaseSpec())
@@ -22,6 +25,7 @@ public class OrderMethods extends RestClient implements Endpoints {
                 .then();
     }
 
+    @Step("получение данных заказа пользователя")
     public ValidatableResponse getUsersOrders(String accessToken) {
         return given()
                 .spec(getBaseSpec())

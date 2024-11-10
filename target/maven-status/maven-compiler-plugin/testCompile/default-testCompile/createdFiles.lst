@@ -1,5 +1,4 @@
 org\example\CreateUserTests.class
 org\example\LoginUserTest.class
 org\example\PatchUserTest.class
-org\example\OrderMethods.class
 org\example\OrderTest.class

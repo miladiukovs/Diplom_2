@@ -1,11 +1,13 @@
 package org.example;
 
+import io.qameta.allure.Step;
 import io.restassured.response.ValidatableResponse;
 
 import static io.restassured.RestAssured.given;
 
 public class UserMethods extends RestClient implements Endpoints {
 
+    @Step("создание нового пользователя")
     public ValidatableResponse create(User user) {
         return given()
                 .spec(getBaseSpec())
@@ -15,6 +17,7 @@ public class UserMethods extends RestClient implements Endpoints {
                 .then();
     }
 
+    @Step("авторизация пользователя")
     public ValidatableResponse login(UserCredentials userCredentials) {
         return given()
                 .spec(getBaseSpec())
@@ -24,6 +27,7 @@ public class UserMethods extends RestClient implements Endpoints {
                 .then();
     }
 
+    @Step("удаление пользователя")
     public void delete(String accessToken) {
         given()
                 .spec(getBaseSpec())
@@ -32,6 +36,7 @@ public class UserMethods extends RestClient implements Endpoints {
                 .delete(DELETE_USER);
     }
 
+    @Step("редактирование данных пользователя")
     public ValidatableResponse patch(String accessToken, String body) {
         return given()
                 .spec(getBaseSpec())
