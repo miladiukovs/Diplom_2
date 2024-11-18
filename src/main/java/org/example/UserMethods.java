@@ -4,8 +4,9 @@ import io.qameta.allure.Step;
 import io.restassured.response.ValidatableResponse;
 
 import static io.restassured.RestAssured.given;
+import static org.example.Endpoints.*;
 
-public class UserMethods extends RestClient implements Endpoints {
+public class UserMethods extends RestClient {
 
     @Step("создание нового пользователя")
     public ValidatableResponse create(User user) {

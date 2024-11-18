@@ -25,7 +25,7 @@ public class CreateUserTests {
     }
 
     @After
-    public void CleanUp() {
+    public void cleanUp() {
         if (accessToken != null) {
             userMethods.delete(accessToken);
         }
@@ -49,14 +49,6 @@ public class CreateUserTests {
         accessToken = response.extract().path("accessToken");
         ValidatableResponse responseEqual = userMethods.create(user);
         assertEquals("Пользователь уже занят", 403, responseEqual.extract().statusCode());
-    }
-
-    private static Stream<User> userData() {
-        return Stream.of(
-                new User(null, "1234", "ssss"),
-                new User("ss@ss.ss", null, "ssss"),
-                new User("ss@ss.ss", "1234", null)
-        );
     }
 
     @Test
