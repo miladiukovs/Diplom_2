@@ -4,8 +4,9 @@ import io.qameta.allure.Step;
 import io.restassured.response.ValidatableResponse;
 
 import static io.restassured.RestAssured.given;
+import static org.example.Endpoints.*;
 
-public class OrderMethods extends RestClient implements Endpoints {
+public class OrderMethods extends RestClient {
 
     @Step("создание заказа")
     public ValidatableResponse createOrder(Order order, String accessToken) {
